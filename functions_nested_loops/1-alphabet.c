@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * main - Program entry point
+ * print_alphabet - Program entry point
  *
  *
  * Return:  0 on success. Error code otherwise

@@ -1,8 +1,8 @@
 #include "main.h"
 
 /**
- * main - Program entry point
- *
+ * _abs - Program entry point
+ * @param n number
  *
  * Return:  0 on success. Error code otherwise
  */
@@ -10,10 +10,7 @@
 int _abs(int n)
 {
 	if (n < 0)
-	{
-		return n * n; 
-	} 
-	else {
-		return n;
-	}
+		return (n * -1);
+	else
+		return (n);
 }
