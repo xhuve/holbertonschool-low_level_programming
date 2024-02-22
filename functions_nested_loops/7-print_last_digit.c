@@ -2,7 +2,7 @@
 
 /**
  * print_last_digit - Program entry point
- *
+ * @n: input number
  *
  * Return:  0 on success. Error code otherwise
  */
@@ -10,6 +10,7 @@
 int print_last_digit(int n)
 {
 	int d = n % 10;
+
 	if (n >= 0)
 	{
 		_putchar(d + '0');

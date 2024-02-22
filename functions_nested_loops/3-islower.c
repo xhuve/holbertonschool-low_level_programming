@@ -2,7 +2,7 @@
 
 /**
  * _islower - Program entry point
- * int c - parameter
+ * @c: parameter
  *
  * Return:  0 on success. Error code otherwise
  */

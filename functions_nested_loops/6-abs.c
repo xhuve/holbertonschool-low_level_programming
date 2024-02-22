@@ -2,7 +2,7 @@
 
 /**
  * _abs - Program entry point
- * @param n number
+ * @n: number
  *
  * Return:  0 on success. Error code otherwise
  */
