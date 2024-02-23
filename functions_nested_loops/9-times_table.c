@@ -24,7 +24,7 @@ void times_table(void)
 						first /= 10;
 					}
 					_putchar('0' + first);
-				} else
+				} else if (sum < 10 && j != 0)
 				{
 					_putchar(' ');
 				}
