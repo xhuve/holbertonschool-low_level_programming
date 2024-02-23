@@ -1,21 +1,38 @@
 #include "main.h"
+#include <stdio.h>
 
 /**
- * print_ - Program entry point
- *
+ * print_to_98 - Program entry point
+ * @n: number
  *
  * Return:  0 on success. Error code otherwise
  */
 
-void jack_bauer(void)
+void print_to_98(int n)
 {
-	char i, j, l, m;
-
-	for (i = 48; i <= 50; i++)
-	{
-		for (j = 48; j <= 57; j++)
-		{	
-			
+	if (n > 98)
+	{	
+		for (; n >= 98; n--)
+		{
+			printf("%d", n);
+			if (n != 98)
+			{
+				printf(", ");
+			}	
 		}
+		putchar('\n');
+	} 
+	else
+	{
+		for (; n <= 98; n++)
+		{
+			printf("%d", n);
+			if (n != 98)
+			{
+				printf(", ");
+			}	
+		}
+		putchar('\n');
 	}
+
 }
