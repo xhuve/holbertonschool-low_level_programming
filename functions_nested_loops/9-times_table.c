@@ -27,10 +27,12 @@ void times_table(void)
 				} else if (sum == 10)
 				{
 					_putchar('1'); 
+				} else
+				{
+					_putchar(' ');
 				}
 				_putchar('0' + (sum % 10));
 				_putchar(',');
-				_putchar(' ');
 				_putchar(' ');
 			}
 			_putchar('\n');
