@@ -17,23 +17,23 @@ void times_table(void)
 			{
 				sum = i * j;
 				first = sum;
-				if (sum > 10)
+				if (sum >= 10)
 				{
 					while(first >= 10)
 					{
 						first /= 10;
 					}
 					_putchar('0' + first);
-				} else if (sum == 10)
-				{
-					_putchar('1'); 
 				} else
 				{
 					_putchar(' ');
 				}
 				_putchar('0' + (sum % 10));
-				_putchar(',');
-				_putchar(' ');
+				if (j != 9)
+				{
+					_putchar(',');
+					_putchar(' ');
+				}
 			}
 			_putchar('\n');
 		}
