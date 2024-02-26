@@ -2,7 +2,7 @@
 #include <stdio.h>
 
 /**
- * _isupper - Entry point
+ * _isdigit - Entry point
  * @c: integer.
  * Return: Always 0.
  */
