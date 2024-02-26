@@ -3,7 +3,7 @@
 
 /**
  * print_most_numbers - Entry point
- * 
+ *
  * Return: Always 0.
  */
 
