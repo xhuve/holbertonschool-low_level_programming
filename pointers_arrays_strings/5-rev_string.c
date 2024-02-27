@@ -1,15 +1,15 @@
 #include "main.h"
 
 /**
- * rev_string - check the code 
+ * rev_string - check the code
  * @s: pointer
  *
  * Return: thing.
  */
 
-void rev_string(char *s) 
+void rev_string(char *s)
 {
-	int i, j = 0, len;
+	int i, j = 0, len = 0;
 
 	for (i = 0; *(s + i) != '\0'; i++)
 	{

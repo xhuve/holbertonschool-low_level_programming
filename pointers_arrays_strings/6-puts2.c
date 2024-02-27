@@ -1,13 +1,13 @@
 #include "main.h"
 
 /**
- * puts2 - check the code 
+ * puts2 - check the code
  * @str: pointer
  *
  * Return: thing.
  */
 
-void puts2(char *str) 
+void puts2(char *str)
 {
 	int i;
 

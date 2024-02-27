@@ -2,13 +2,13 @@
 #include <stdio.h>
 
 /**
- * print_rev - check the code 
- * @str: pointer
+ * print_rev - check the code
+ * @s: pointer
  *
  * Return: thing.
  */
 
-void print_rev(char *s) 
+void print_rev(char *s)
 {
 	int i;
 
@@ -16,8 +16,7 @@ void print_rev(char *s)
 	{
 	}
 	for (; i >= 0; i--)
-	{	
+	{
 		_putchar(*(s + i));
 	}
-	_putchar('\n');
 }
