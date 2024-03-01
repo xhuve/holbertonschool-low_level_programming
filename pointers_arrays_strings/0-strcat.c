@@ -21,7 +21,7 @@ char *_strcat(char *dest, char *src)
 	{
 		dlen = i;
 	}
-	for (i = 0; i < slen; i++)
+	for (i = 0; i <= slen; i++)
 	{
 		*(dest + i + dlen + 1) = *(src + i);
 	}

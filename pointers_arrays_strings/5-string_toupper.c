@@ -2,29 +2,22 @@
 #include <stdio.h>
 
 /**
- * print_rev - check the code
+ * string_toupper - check the code
  * @s: pointer
  *
  * Return: thing.
  */
 
-void print_rev(char *s)
+char *string_toupper(char *s)
 {
-	int i, len;
+	int i;
 
 	for (i = 0; *(s + i) != '\0'; i++)
 	{
-		len = i;
+		if(*(s + i) >= 97 && *(s + i) <= 122)
+		{
+			*(s + i) -= 32;
+		}
 	}
-
-	if (len == 0)
-	{
-		return;
-	}
-
-	for (i = len; i >= 0; i--)
-	{
-		_putchar(*(s + i));
-	}
-	_putchar('\n');
+	return (s);
 }
