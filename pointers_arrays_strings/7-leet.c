@@ -13,7 +13,7 @@ char *leet(char *s)
 	int i, j;
 	char *list = "aAeEoOtTlL";
 	char *num[5] = {"4", "3", "0", "7", "1"};
-	int list_len = 7;
+	int list_len = 9;
 
 	for (i = 0; s[i] != '\0'; i++)
 	{
