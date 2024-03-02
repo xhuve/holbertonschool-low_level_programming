@@ -27,8 +27,9 @@ char *_strncat(char *dest, char *src, int n)
 	for (i = 0; i < n; i++)
 	{
 		*(dest + i + dlen + 1) = *(src + i);
+		if (i == n - 1)
+			*(dest + i + dlen + 1) = '\0';
 	}
-	*(dest + i + dlen + 1) = '\0';
 
 	return (dest);
 }
