@@ -2,7 +2,7 @@
 #include <stdio.h>
 
 /**
- * _strbrk - check the code
+ * _strpbrk - check the code
  * @s: pointer
  * @accept: char
  *
@@ -23,5 +23,5 @@ char *_strpbrk(char *s, char *accept)
 			}
 		}
 	}
-	return NULL;
+	return (NULL);
 }

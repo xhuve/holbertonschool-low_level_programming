@@ -2,7 +2,7 @@
 #include <stdio.h>
 
 /**
- * _strbrk - check the code
+ * _strstr - check the code
  * @haystack: pointer
  * @needle: char
  *
@@ -19,9 +19,9 @@ char *_strstr(char *haystack, char *needle)
 		{
 			if (haystack[i + j] == needle[j] && needle[j + 1] == '\0')
 			{
-				return (needle);
+				return (haystack + (i));
 			}
 		}
 	}
-	return NULL;
+	return (NULL);
 }
