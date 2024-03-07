@@ -3,7 +3,7 @@
 
 /**
  * print_chessboard - check the code
- * @board: pointer
+ * @a: pointer
  *
  * Return: thing.
  */
