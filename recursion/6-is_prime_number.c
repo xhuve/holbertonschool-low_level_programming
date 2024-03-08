@@ -4,7 +4,7 @@
  * is_prime - check the code
  * @n: integer.
  * @i: integer
- * @j: integer
+ *
  *
  * is_prime_number - check the code
  * @n: integer
@@ -15,9 +15,9 @@
 int is_prime(int n, int i)
 {
 	if (n % i == 0 || i >= n)
-		return 0;
+		return (0);
 	if (i == n / 2)
-		return 1;
+		return (1);
 	return (is_prime(n, i + 1));
 }
 
