@@ -4,7 +4,7 @@
 /**
  * _calloc - check the code
  * @nmemb: number of indices
- * @size: bytes of the array
+ * @size: bytes per element
  *
  * Return: Always 0.
  */
@@ -23,7 +23,7 @@ void *_calloc(unsigned int nmemb, unsigned int size)
 
 	i = 0;
 
-	while (i <= nmemb)
+	while (i <= nmemb * size)
 	{
 		new[i] = 0;
 		i++;
