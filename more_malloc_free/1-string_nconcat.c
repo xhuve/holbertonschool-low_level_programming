@@ -5,14 +5,15 @@
  * str_concat - check the code
  * @s1: char
  * @s2: char
+ * @n: int
  *
  * Return: Always 0.
  */
 
 char *string_nconcat(char *s1, char *s2, unsigned int n)
 {
-	char *new;
-	unsigned int i, j, len1 = 0, len2 = 0;
+	char *new = "";
+	unsigned int i = 0, j, len1 = 0, len2 = 0;
 
 	if (s1 == NULL)
 		s1 = "";
@@ -22,7 +23,6 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	while (s1[len1] != '\0')
 		len1++;
 
-
 	while (s2[len2] != '\0')
 		len2++;
 
@@ -30,18 +30,16 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	if (new == NULL)
 		return (NULL);
 
-	i = 0;
-
 	while (i < len1)
 	{
 		new[i] = s1[i];
 		i++;
 	}
 
-	j = 0;
-
 	if (n >= len2)
 		n = len2;
+	
+	j = 0;
 
 	while (j < n)
 	{

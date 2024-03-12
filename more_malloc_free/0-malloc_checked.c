@@ -10,10 +10,10 @@
 
 void *malloc_checked(unsigned int b)
 {
-	unsigned int *array = malloc(sizeof(b) * b);
+	int *array = malloc(sizeof(int) * b);
 
 	if (array == NULL || b == 0)
 		exit(98);
 
-	return (array);
+	return (array); 
 }

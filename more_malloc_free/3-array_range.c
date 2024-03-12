@@ -2,9 +2,9 @@
 #include <stdlib.h>
 
 /**
- * alloc_grid - check the code
- * @width: char
- * @height: char
+ * array_range - check the code
+ * @min: integer
+ * @max: integer
  *
  * Return: Always 0.
  */
@@ -17,7 +17,7 @@ int *array_range(int min, int max)
 	if (min > max)
 		return (NULL);
 
-	arr = malloc(sizeof(int) * (max - min));
+	arr = malloc(sizeof(int) * (max - min + 1));
 	if (arr == NULL)
 	{
 		free(arr);
