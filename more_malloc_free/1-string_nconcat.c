@@ -2,7 +2,7 @@
 #include <stdlib.h>
 
 /**
- * str_concat - check the code
+ * string_nconcat - check the code
  * @s1: char
  * @s2: char
  * @n: int
@@ -12,7 +12,7 @@
 
 char *string_nconcat(char *s1, char *s2, unsigned int n)
 {
-	char *new = "";
+	char *new;
 	unsigned int i = 0, j, len1 = 0, len2 = 0;
 
 	if (s1 == NULL)
@@ -38,7 +38,7 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 
 	if (n >= len2)
 		n = len2;
-	
+
 	j = 0;
 
 	while (j < n)
@@ -46,6 +46,8 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 		new[i + j] = s2[j];
 		j++;
 	}
+	
+	new[i + j] = '\0';
 
 	return (new);
 }
