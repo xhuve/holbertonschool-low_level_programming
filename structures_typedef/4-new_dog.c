@@ -13,22 +13,35 @@
 
 dog_t *new_dog(char *name, float age, char *owner)
 {
-	char *optr = malloc(sizeof(owner));
-	char *nptr = malloc(sizeof(name));
-	
+	char *namec, *ownerc;
+	int i;
+
 	dog_t *d = malloc(sizeof(dog_t));
 	if (d == NULL)
 		return NULL;
 
-	if(nptr == NULL)
-		return NULL;
+	namec = malloc(sizeof(name));
+	if (namec == NULL)
+		return(NULL);
 
-	if(optr == NULL)
-		return NULL;
+	for (i = 0; name[i] != '\0'; i++)
+	{
+		namec[i] = name[i];
+	}
 
-	d->name = name;
+	ownerc = malloc(sizeof(owner));
+	if (ownerc == NULL)
+		return(NULL);
+
+	for (i = 0; owner[i] != '\0'; i++)
+	{
+		ownerc[i] = owner[i];
+	}
+
+
+	d->name = namec;
 	d->age = age;
-	d->owner = owner;
+	d->owner = ownerc;
 
 	return (d);
 }
