@@ -4,16 +4,18 @@
 
 /**
  * main - check code
+ * @argc: int
+ * @argv: array
  *
  * Return: thing
  */
 
-int main (int argc, char *argv[])
+int main(int argc, char *argv[])
 {
 	int (*func)(int, int);
 	char *arg = argv[2];
 
-	if (argc > 4)
+	if (argc != 4)
 	{
 		printf("Error\n");
 		exit(98);
@@ -26,7 +28,7 @@ int main (int argc, char *argv[])
 	}
 
 	func = get_op_func(arg);
-	
+
 	if (!func || arg[1] != '\0')
 	{
 		printf("Error\n");
