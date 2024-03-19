@@ -11,7 +11,7 @@
 
 int print_strings(char *seperator, const unsigned int n, ...)
 {
-	unsigned int i, j = 0;
+	unsigned int i;
 	va_list ap;
 	char *curr;
 
@@ -25,9 +25,8 @@ int print_strings(char *seperator, const unsigned int n, ...)
 		else
 			printf("%s", curr);
 
-		while (seperator[j] && i != n - 1)
-			printf("%c", seperator[j++]);
-		j = 0;
+		if (seperator && i != n - 1)
+			printf("%s", seperator);
 	}
 
 	va_end(ap);

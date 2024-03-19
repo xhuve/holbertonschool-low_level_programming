@@ -11,7 +11,7 @@
 
 int print_numbers(char *seperator, const unsigned int n, ...)
 {
-	unsigned int i, j = 0;
+	unsigned int i;
 	va_list ap;
 
 	if (n == 0)
@@ -24,9 +24,8 @@ int print_numbers(char *seperator, const unsigned int n, ...)
 	for (i = 0; i < n; i++)
 	{
 		printf("%d", va_arg(ap, int));
-		while (seperator[j] != '\0' && i != n - 1)
-			printf("%c", seperator[j++]);
-		j = 0;
+		if (i != n - 1)
+			printf("%s", seperator);
 	}
 
 	va_end(ap);

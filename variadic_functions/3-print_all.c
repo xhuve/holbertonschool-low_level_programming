@@ -45,13 +45,14 @@ void print_float(va_list float_list)
  *
  * Return: thing
  */
+
 void print_string(va_list str_list)
 {
 	char *str;
 
 	str = va_arg(str_list, char*);
 	if (str == NULL)
-		printf("(nill)");
+		printf("(nil)");
 	printf("%s", str);
 }
 
@@ -65,6 +66,7 @@ void print_string(va_list str_list)
 void print_all(const char * const format, ...)
 {
 	int i, j;
+	char *sep = "";
 	va_list arg_list;
 
 	print_funcs prints[] = {
@@ -85,13 +87,13 @@ void print_all(const char * const format, ...)
 		{
 			if (*prints[j].type == format[i])
 			{
-				if (i != 0)
-					printf(", ");
+				printf("%s", sep);
 				prints[j].print_func(arg_list);
 			}
 			j++;
 		}
 		i++;
+		sep = ", ";
 	}
 
 
