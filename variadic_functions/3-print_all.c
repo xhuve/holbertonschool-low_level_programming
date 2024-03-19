@@ -52,7 +52,10 @@ void print_string(va_list str_list)
 
 	str = va_arg(str_list, char*);
 	if (str == NULL)
+	{
 		printf("(nil)");
+		return;
+	}
 	printf("%s", str);
 }
 
