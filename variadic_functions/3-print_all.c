@@ -88,12 +88,12 @@ void print_all(const char * const format, ...)
 			if (*prints[j].type == format[i])
 			{
 				printf("%s", sep);
+				sep = ", ";
 				prints[j].print_func(arg_list);
 			}
 			j++;
 		}
 		i++;
-		sep = ", ";
 	}
 
 
