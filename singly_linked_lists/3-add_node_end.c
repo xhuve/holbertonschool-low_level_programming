@@ -4,7 +4,7 @@
 #include <string.h>
 
 /**
-* add_node - check code
+* add_node_end - check code
 *
 * @head: head of node
 * @str: str of node
