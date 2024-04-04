@@ -3,15 +3,15 @@
 #include "lists.h"
 
 /**
-* dlistint_len - check code
+* add_dnodeint - check code
 *
-* @h: head of node
+* @head: head of node
+* @n: value of node
 * Return: length of node
 */
 dlistint_t *add_dnodeint(dlistint_t **head, const int n)
 {
 	dlistint_t *new;
-	
 
 	new = malloc(sizeof(dlistint_t));
 	if (new == NULL)
