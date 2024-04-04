@@ -2,7 +2,7 @@
 #include "lists.h"
 
 /**
-* list_len - check code
+* dlistint_len - check code
 *
 * @h: head of node
 * Return: length of node
