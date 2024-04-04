@@ -4,7 +4,7 @@
 #include <string.h>
 
 /**
-* add_node_end - check code
+* free_list - check code
 *
 * @head: head of node
 * Return: addr
