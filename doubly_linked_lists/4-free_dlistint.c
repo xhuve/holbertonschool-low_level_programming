@@ -5,7 +5,7 @@
 /**
 * free_dlistint - check code
 *
-* @h: head of node
+* @head: head of node
 * Return: length of node
 */
 void free_dlistint(dlistint_t *head)
