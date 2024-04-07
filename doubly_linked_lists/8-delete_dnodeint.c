@@ -3,9 +3,9 @@
 #include "lists.h"
 
 /**
-* insert_dnodeint_at_index - check code
+* delete_dnodeint_at_index - check code
 *
-* @h: head of node
+* @head: head of node
 * @index: value of node
 * Return: length of node
 */
@@ -23,7 +23,7 @@ int delete_dnodeint_at_index(dlistint_t **head, unsigned int index)
 	{
 		tmp->prev = NULL;
 		*head = tmp->next;
-		return (0);
+		return (1);
 	}
 	printf("not 0");
 	for (i = 0; i < index - 1; i++)
@@ -36,6 +36,6 @@ int delete_dnodeint_at_index(dlistint_t **head, unsigned int index)
 	tmp->prev = tmp->next; 
 	tmp->next = tmp->next->next;
 
-	return (0);
+	return (1);
 }
 
