@@ -1,6 +1,12 @@
 #include "main.h"
 #include <stdio.h>
 
+/**
+* binary_to_uint - check code
+*
+* @b: string
+* Return: sum
+*/
 unsigned int binary_to_uint(const char *b)
 {
 	int count;
