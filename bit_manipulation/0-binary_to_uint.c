@@ -15,10 +15,10 @@ unsigned int binary_to_uint(const char *b)
 			return (0);
 	}
 
-	for(count -= 1; count >= 0; count--)
+	for (count -= 1; count >= 0; count--)
 	{
 		if (b[count] == '1')
-			sum += pow; 
+			sum += pow;
 		pow *= 2;
 	}
 
