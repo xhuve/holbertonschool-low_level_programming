@@ -6,7 +6,7 @@
 * flip_bits - check code
 *
 * @n: number
-* @index: length
+* @m: length
 * Return: number
 */
 unsigned int flip_bits(unsigned long int n, unsigned long int m)
@@ -16,7 +16,7 @@ unsigned int flip_bits(unsigned long int n, unsigned long int m)
 
 	result = n ^ m;
 
-	while (result != 0)
+	while (result > 0)
 	{
 		count += result & 1;
 		result >>= 1;
