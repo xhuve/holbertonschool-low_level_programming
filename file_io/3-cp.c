@@ -11,7 +11,6 @@
 *
 * Return: int
 */
-
 int main(int ac, char **av)
 {
 	int file_from, file_to, readfd, writefd, closefd;
@@ -31,7 +30,7 @@ int main(int ac, char **av)
 		write(STDERR_FILENO, "Error: Can't read from file NAME_OF_THE_FILE\n", 45);
 		exit(98);
 	}
-	
+
 	readfd = read(file_from, buffer, 1024);
 
 	file_to = open(av[2], O_RDWR | O_CREAT, 0664);
@@ -59,5 +58,5 @@ int main(int ac, char **av)
 		exit(100);
 	}
 
-	return (1);
+	return (0);
 }
