@@ -2,6 +2,14 @@
 #include <stdlib.h>
 #include <fcntl.h>
 
+/**
+* read_textfile - check code
+*
+* @filename: file name
+* @letters: text
+*
+* Return: int
+*/
 ssize_t read_textfile(const char *filename, size_t letters)
 {
 	int openfd, readfd, writefd;
