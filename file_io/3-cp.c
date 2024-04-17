@@ -51,7 +51,7 @@ int main(int ac, char **av)
 	file_to = open(av[2], O_RDWR | O_CREAT | O_EXCL, 0664);
 	if (file_to == -1)
 	{
-		dprintf(STDOUT_FILENO, "Error: Can't write to %s\n" av[2]);
+		dprintf(STDOUT_FILENO, "Error: Can't write to %s\n", av[2]);
 		exit(99);
 	}
 
