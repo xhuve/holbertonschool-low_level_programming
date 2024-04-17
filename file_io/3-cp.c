@@ -3,6 +3,15 @@
 #include <fcntl.h>
 #include <stdio.h>
 
+int _strlen(char *str)
+{
+	int length = 0; 
+
+	while (str[length++] != '\0');
+
+	return (length);
+}
+
 /**
 * main - check code
 *
@@ -27,22 +36,27 @@ int main(int ac, char **av)
 	file_from = open(av[1], O_RDONLY);
 	if (file_from == -1)
 	{
-		write(STDERR_FILENO, "Error: Can't read from file NAME_OF_THE_FILE\n", 45);
+		write(STDERR_FILENO, "Error: Can't read from file", 27);
+		write(STDERR_FILENO, av[1], _strlen(av[1]));
+		putchar('\n');
 		exit(98);
 	}
-
-	readfd = read(file_from, buffer, 1024);
 
 	file_to = open(av[2], O_RDWR | O_CREAT, 0664);
 	if (file_to == -1)
 	{
-		write(STDERR_FILENO, "Error: Can't write to \n", 39);
+		write(STDERR_FILENO, "Error: Can't write to", 21);
+		write(STDERR_FILENO, av[2], _strlen(av[2]));
+		putchar('\n');
 		exit(99);
 	}
 
-	writefd = write(file_to, buffer, readfd);
-	if (writefd == -1)
-		return (-1);
+	while ((readfd = read(file_from, buffer, 1024)) > 0)
+	{
+		writefd = write(file_to, buffer, readfd);
+		if (writefd == -1)
+			return (-1);
+	}
 
 	closefd = close(file_from);
 	if (closefd == -1)
