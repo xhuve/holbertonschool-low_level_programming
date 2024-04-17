@@ -48,7 +48,7 @@ int main(int ac, char **av)
 		exit(98);
 	}
 
-	file_to = open(av[2], O_RDWR | O_CREAT | O_EXCL, 0664);
+	file_to = open(av[2], O_WRONLY | O_CREAT | O_TRUNC, 0664);
 	if (file_to == -1)
 	{
 		dprintf(STDOUT_FILENO, "Error: Can't write to %s\n", av[2]);
@@ -58,12 +58,21 @@ int main(int ac, char **av)
 	readfd = read(file_from, buffer, 1024);
 	if (readfd == -1)
 		return (-1);
+
 	while (readfd > 0)
 	{
 		writefd = write(file_to, buffer, readfd);
 		if (writefd == -1)
-			return (-1);
+		{
+			dprintf(STDOUT_FILENO, "Error: Can't write to %s\n", av[2]);
+			exit(99);
+		}
 		readfd = read(file_from, buffer, 1024);
+		if (readfd == -1)
+		{
+			dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", av[1]);
+			exit(98);
+		}
 	}
 
 	closefd = close(file_from);
