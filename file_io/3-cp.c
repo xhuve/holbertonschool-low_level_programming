@@ -3,11 +3,19 @@
 #include <fcntl.h>
 #include <stdio.h>
 
+/**
+* _strlen - check code
+*
+* @str: string
+*
+* Return: int
+*/
 int _strlen(char *str)
 {
-	int length = 0; 
+	int length = 0;
 
-	while (str[length++] != '\0');
+	while (str[length++] != '\0')
+	;
 
 	return (length);
 }
@@ -36,18 +44,14 @@ int main(int ac, char **av)
 	file_from = open(av[1], O_RDONLY);
 	if (file_from == -1)
 	{
-		write(STDERR_FILENO, "Error: Can't read from file", 27);
-		write(STDERR_FILENO, av[1], _strlen(av[1]));
-		putchar('\n');
+		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", av[1]);
 		exit(98);
 	}
 
-	file_to = open(av[2], O_RDWR | O_CREAT, 0664);
+	file_to = open(av[2], O_RDWR | O_CREAT | O_EXCL, 0664);
 	if (file_to == -1)
 	{
-		write(STDERR_FILENO, "Error: Can't write to", 21);
-		write(STDERR_FILENO, av[2], _strlen(av[2]));
-		putchar('\n');
+		dprintf(STDOUT_FILENO, "Error: Can't write to %s\n" av[2]);
 		exit(99);
 	}
 
@@ -61,14 +65,14 @@ int main(int ac, char **av)
 	closefd = close(file_from);
 	if (closefd == -1)
 	{
-		write(STDERR_FILENO, "Error: Can't close fd FD_VALUE\n", 31);
+		dprintf(STDOUT_FILENO, "Error: Can't close fd %d\n", file_from);
 		exit(100);
 	}
 
 	closefd = close(file_to);
 	if (closefd == -1)
 	{
-		write(STDERR_FILENO, "Error: Can't close fd FD_VALUE\n", 31);
+		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", file_to);
 		exit(100);
 	}
 
