@@ -57,7 +57,10 @@ int main(int ac, char **av)
 
 	readfd = read(file_from, buffer, 1024);
 	if (readfd == -1)
-		return (-1);
+	{
+		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", av[1]);
+		exit(98);
+	}
 
 	while (readfd > 0)
 	{
