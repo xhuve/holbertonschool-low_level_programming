@@ -55,11 +55,15 @@ int main(int ac, char **av)
 		exit(99);
 	}
 
-	while ((readfd = read(file_from, buffer, 1024)) > 0)
+	readfd = read(file_from, buffer, 1024);
+	if (readfd == -1)
+		return (-1);
+	while (readfd > 0)
 	{
 		writefd = write(file_to, buffer, readfd);
 		if (writefd == -1)
 			return (-1);
+		readfd = read(file_from, buffer, 1024);
 	}
 
 	closefd = close(file_from);
